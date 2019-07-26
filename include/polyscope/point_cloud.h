@@ -88,6 +88,7 @@ public:
   void deleteProgram();
   void writePointsToFile(std::string filename = "");
   void setPointCloudUniforms(gl::GLProgram& p);
+  void setPointCloudRadius(float radius);
 
 private:
   // Visualization parameters

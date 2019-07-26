@@ -199,6 +199,7 @@ public:
   // === Helpers
   void fillGeometryBuffers(gl::GLProgram& p);
   void setShadeStyle(ShadeStyle newShadeStyle);
+  void setEdgeWidth(float width);
 
 
   // === Manage the mesh itself

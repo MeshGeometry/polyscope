@@ -46,6 +46,10 @@ void PointCloud::setPointCloudUniforms(gl::GLProgram& p) {
   p.setUniform("u_camRight", rightDir);
 }
 
+void PointCloud::setPointCloudRadius(float radius) {
+  pointRadius = radius;
+}
+
 void PointCloud::draw() {
   if (!enabled) {
     return;

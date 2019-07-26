@@ -860,6 +860,11 @@ void SurfaceMesh::setShadeStyle(ShadeStyle newShadeStyle) {
   geometryChanged();
 }
 
+void SurfaceMesh::setEdgeWidth(float width) {
+  edgeWidth = width;
+  geometryChanged();
+};
+
 void SurfaceMesh::geometryChanged() {
   program.reset();
   pickProgram.reset();
