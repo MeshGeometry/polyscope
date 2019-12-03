@@ -33,13 +33,13 @@ CurveNetwork* registerCurveNetwork2D(std::string name, const P& nodes, const E& 
 // Shorthand to add curve from a line of points
 template <class P>
 CurveNetwork* registerCurveNetworkLine(std::string name, const P& nodes) {
-
+  const auto nodes_arr = standardizeVectorArray<glm::vec3, 3>(nodes);
   std::vector<std::array<size_t, 2>> edges;
-  for (size_t iE = 1; iE < nodes.size(); iE++) {
+  for (size_t iE = 1; iE < nodes_arr.size(); iE++) {
     edges.push_back({iE - 1, iE});
   }
 
-  CurveNetwork* s = new CurveNetwork(name, standardizeVectorArray<glm::vec3, 3>(nodes), edges);
+  CurveNetwork* s = new CurveNetwork(name, nodes_arr, edges);
   bool success = registerStructure(s);
   if (!success) {
     safeDelete(s);
